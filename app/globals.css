@@ -4,7 +4,7 @@ html{-webkit-text-size-adjust:100%}
 body{margin:0}
 [hidden]{display:none!important}
 html{scroll-behavior:smooth}
-#mapa,#servicios,#unete,#servicios-lista{scroll-margin-top:90px}
+#mapa,#servicios,#unete,#servicios-lista,#app{scroll-margin-top:90px}
 
 /* Layout: off-white page, one 1120px column, black rounded panels + white cards, lime for actions/highlights (brand guide "Calma clara v3").
    Deliberately single light theme — the brand guide defines one palette. */
@@ -37,7 +37,9 @@ button,input,select{font:inherit;color:inherit}
 /* preview ribbon */
 .ribbon{background:var(--ink);color:#D8DBD2;font-size:13px}
 .ribbon .wrap{display:flex;gap:10px;align-items:center;justify-content:center;padding-block:7px;text-align:center}
-.ribbon b{color:var(--lime);font-weight:600}
+.ribbon b,.ribbon a{color:var(--lime);font-weight:600}
+.ribbon a{text-decoration:none}
+.ribbon a:hover{text-decoration:underline;text-underline-offset:3px}
 
 /* header */
 .hdr{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid transparent;transition:border-color .2s}

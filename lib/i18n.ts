@@ -10,7 +10,7 @@ export function href(lang: Lang, path: string) {
 }
 
 const es = {
-  ribbon: ["Vista previa", "para revisión interna · Ubicaciones, horarios, precios y promociones son de ejemplo"],
+  ribbon: ["Descarga la app MiCarro", "y acumula puntos para lavados gratis."],
   nav: { locations: "Ubicaciones", services: "Servicios", agua: "MiCarro Agua", join: "Únete a MiCarro", book: "Reservar lavado", contact: "Contacto", openMenu: "Abrir menú", home: "MiCarro, inicio" },
   soon: "se diseña en la siguiente fase.",
   footer: { tagline: "Tu carro en buenas manos.", made: "© 2026 MiCarro. Hecho en El Salvador.", sample: "Diseño de muestra: ubicaciones, horarios, precios y promociones son de ejemplo." },
@@ -104,7 +104,7 @@ const es = {
 export type Dict = typeof es;
 
 const en: Dict = {
-  ribbon: ["Preview", "for internal review · English version · Locations, hours, prices and promotions are samples"],
+  ribbon: ["Download the MiCarro app", "and earn points toward free car washes!"],
   nav: { locations: "Locations", services: "Services", agua: "MiCarro Agua", join: "Join MiCarro", book: "Book a wash", contact: "Contact", openMenu: "Open menu", home: "MiCarro, home" },
   soon: "is designed in the next phase.",
   footer: { tagline: "Your car in good hands.", made: "© 2026 MiCarro. Made in El Salvador.", sample: "Sample design: locations, hours, prices and promotions are examples." },

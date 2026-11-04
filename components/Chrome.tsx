@@ -19,7 +19,7 @@ function Logo({ lang, big }: { lang: Lang; big?: boolean }) {
 export function Ribbon({ lang }: { lang: Lang }) {
   const [a, b] = t(lang).ribbon;
   return (
-    <div className="ribbon"><div className="wrap"><span><b>{a}</b> {b}</span></div></div>
+    <div className="ribbon"><div className="wrap"><span><Link href={`${href(lang, "/")}#app`}>{a}</Link> {b}</span></div></div>
   );
 }
 

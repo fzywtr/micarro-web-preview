@@ -60,7 +60,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         <div className="cards">{LOCATIONS.slice(0, 3).map((loc) => <LocationCard key={loc.slug} loc={loc} lang={lang} />)}</div>
       </section>
 
-      <section className="sec appband" aria-labelledby="appT">
+      <section className="sec appband" id="app" aria-labelledby="appT">
         <div className="art"><img src="/img/app-miko.webp" width={820} height={1029} alt={D.app.alt} /></div>
         <div className="copy">
           <span className="pill b-lime">{D.app.soon}</span>
