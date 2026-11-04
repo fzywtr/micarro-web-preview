@@ -13,13 +13,36 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
   const en = lang === "en";
+  const title = en ? "MiCarro · More shine, less water" : "MiCarro · Más brillo, menos agua";
+  const description = en
+    ? "Steam hand washing with far less water, at MiCarro locations and certified car washes in El Salvador."
+    : "Lavado a mano con vapor y mucho menos agua, en ubicaciones MiCarro y autolavados certificados de El Salvador.";
+  const image = {
+    url: en ? "/og-en.jpg" : "/og-es.jpg",
+    width: 1200,
+    height: 630,
+    alt: en ? "MiCarro: More shine, less water" : "MiCarro: Más brillo, menos agua",
+    type: "image/jpeg",
+  };
   return {
-    title: { default: en ? "MiCarro · More shine, less water" : "MiCarro · Más brillo, menos agua", template: "%s · MiCarro" },
-    description: en
-      ? "Steam hand washing with far less water, at MiCarro locations and certified car washes in El Salvador."
-      : "Lavado a mano con vapor y mucho menos agua, en ubicaciones MiCarro y autolavados certificados de El Salvador.",
+    // Absolute base URL for share images. Vercel sets VERCEL_PROJECT_PRODUCTION_URL automatically.
+    metadataBase: new URL(
+      process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : "http://localhost:3000",
+    ),
+    title: { default: title, template: "%s · MiCarro" },
+    description,
     robots: { index: false, follow: false }, // preview: keep out of search engines
     alternates: { languages: { es: "/", en: "/en" } },
+    // Link preview card (WhatsApp, iMessage, Slack, LinkedIn, etc.)
+    openGraph: {
+      type: "website",
+      siteName: "MiCarro",
+      title,
+      description,
+      locale: en ? "en_US" : "es_SV",
+      images: [image],
+    },
+    twitter: { card: "summary_large_image", title, description, images: [image.url] },
   };
 }
 
